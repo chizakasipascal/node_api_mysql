@@ -1,9 +1,13 @@
 //Import 
-
 var express =require('express');
-
+var bodyParser=require('body-parser');
 //instatiation du serveur
 var server=express();
+
+// Body Parser configuration
+server.use(bodyParser.urlencoded({ extended: true }));
+server.use(bodyParser.json());
+
 
 //routes
 server.get('/',function (req,res)  {
@@ -14,5 +18,5 @@ server.get('/',function (req,res)  {
 //launcher seveur 
 
 server.listen(8080,function(){
-    console.log('Sever all ready :)');
+    console.log('Sever all ready :))');
 });
